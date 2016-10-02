@@ -3,19 +3,19 @@
 from solution.list_utils import ListUtils
 
 
-class QuickSorter:
+class MergeSorter:
     @staticmethod
     def sort(numbers):
         if len(numbers) <= 1:
             return numbers
         else:
             first_half = ListUtils.get_first_half(numbers)
-            first_half_sorted = QuickSorter.sort(first_half)
+            first_half_sorted = MergeSorter.sort(first_half)
 
             second_half = ListUtils.get_second_half(numbers)
-            second_half_sorted = QuickSorter.sort(second_half)
+            second_half_sorted = MergeSorter.sort(second_half)
 
-            return QuickSorter._merge(first_half_sorted, second_half_sorted)
+            return MergeSorter._merge(first_half_sorted, second_half_sorted)
 
     @staticmethod
     def _merge(first_sorted_half, second_sorted_half):

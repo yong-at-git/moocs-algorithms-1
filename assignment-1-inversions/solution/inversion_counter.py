@@ -1,7 +1,7 @@
 
 import array
 from solution.list_utils import ListUtils
-from solution.quicksorter import QuickSorter
+from solution.mergesorter import MergeSorter
 
 
 class InversionCounter:
@@ -35,8 +35,8 @@ class InversionCounter:
         second_list_idx = 0
         total_idx = 0
 
-        first_half_sorted = QuickSorter.sort(first_half)
-        second_half_sorted = QuickSorter.sort(second_half)
+        first_half_sorted = MergeSorter.sort(first_half)
+        second_half_sorted = MergeSorter.sort(second_half)
 
         while total_idx < len(first_half) + len(second_half):
             if first_list_idx == len(first_half):
